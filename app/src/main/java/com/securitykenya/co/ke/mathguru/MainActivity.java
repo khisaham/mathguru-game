@@ -21,7 +21,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private CardView leftUpCardView, leftCardDownView;
+    private CardView leftUpCardView, leftCardDownView, rightUpCardView, rightDownCardView;
     private String DEBUG_TAG = "DEBUG_TAG:";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +71,19 @@ public class MainActivity extends AppCompatActivity
 
                 }
                 return true;
+            }
+        });
+
+
+        //right cardView
+        rightUpCardView = (CardView)findViewById(R.id.right_up);
+        TextView textRightUpText = (TextView)findViewById(R.id.right_up_text);
+        final String rightUpText = textRightUpText.getText().toString();
+        rightUpCardView.setOnTouchListener(new View.OnTouchListener(){
+
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                return false;
             }
         });
     }
